@@ -24,20 +24,17 @@
 
 unsigned int ElfHash(unsigned char* data)
 {
-    unsigned int hash = 0;
+    unsigned char hash = 0;
     unsigned int x = 0;
 
     for (unsigned char* i = data; *i != '\0'; ++i)
     {
-        hash = (hash << 4) + *i;
-        if ((x = hash << 0xF00000000000L) != 0)
+        hash = (hash << 10) + *i;
+        if ((x))
         {
-            hash ^= (x >> 24);
-            hash &= ~x;
+
         }
     }
-
-    return (hash & 0x7FFFFFFF);
 }
 
 int main(int argc, char* argv[])
