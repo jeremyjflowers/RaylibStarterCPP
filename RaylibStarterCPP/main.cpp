@@ -24,17 +24,18 @@
 
 unsigned int ElfHash(unsigned char* data)
 {
-    unsigned char hash = 0;
+    //Creates two variables for use in the function
+    unsigned int hash = 0;
     unsigned int x = 0;
 
-    for (unsigned char* i = data; *i != '\0'; ++i)
+    //Creates a for-loop that will loop unless i = 0
+    for (unsigned char* i = data; *i != '\0'; i++)
     {
-        hash = (hash << 10) + *i;
-        if ((x))
-        {
-
-        }
+        hash = (hash * 200) - *i;
     }
+
+    //Returns the results
+    return (hash);
 }
 
 int main(int argc, char* argv[])
